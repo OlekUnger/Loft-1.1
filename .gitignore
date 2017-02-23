@@ -33,7 +33,7 @@ Thumbs.db
 bower_components
 dist
 build
-templates
+source/templates
 
 # Node.JS
 node_modules

@@ -1,0 +1,172 @@
+.slider
+    +size(100% 100vh)
+    min-height: 650px
+    flex-grow: 1
+    position: relative
+    display: flex
+    overflow: hidden
+    background-color: $tan
+    padding: 0 5rem 5rem
+   
+    &_wrap
+        +size(100%)
+        display: flex
+        margin: 0 auto
+        position: relative
+        overflow: hidden
+        
+    &_item
+        +size(100%)
+        background-color: $tan
+        position: absolute 
+        top: 0                
+        left: 0 
+        z-index: 0  
+        display: flex
+        +w992
+            flex-direction: column
+           
+        &.active 
+            position: relative 
+            z-index: 1 
+        &.inslide
+            z-index: 2
+        
+        &--left,
+        &--right
+            +size(50% 100%)
+            display: flex
+            justify-content: center
+            align-items: center
+            
+            +w992
+                width: 100%
+        &--left
+            +w992
+                order: 2
+                height: 75%
+                
+        &--right
+            +w992
+                order: 1
+                height: 25%
+    &_img
+        max-width: 800px
+        height: 70%
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        +w992
+            height: 80%
+        img
+            display: block
+            margin: 0 auto
+            width: 95%
+            height: auto
+            // +w480
+            //     width: 100%
+            //     height: auto!important
+
+    &_controls
+        position: absolute
+        height: 11px
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 3rem
+        z-index: 20
+        display: flex
+        justify-content: center
+        align-items: center
+        .dot
+            width: 11px
+            height: 11px
+            margin: 0 5px
+            border: 2px solid $main
+            background-color: #fff
+            border-radius: 50%
+            cursor: pointer
+            &.active,
+            &:hover
+                background-color: $main
+            
+    &_nav
+        +size(100% 26px)
+        position: absolute
+        display: flex
+        justify-content: space-between
+        top: 50%
+        left: 0
+        z-index: 10
+        padding: 0px 2.5rem
+        +w320
+            padding: 0 10px
+.nav_icon
+    +size(26px 16px)
+    transition: all ease-in-out .1s
+    fill: $dark-gray
+    fill-opacity: .7
+    cursor: pointer
+    &:hover
+        fill-opacity: 1
+    &--left
+        transform: rotate(90deg)
+    &--right
+        transform: rotate(-90deg)
+
+
+.slider
+    .site
+        align-self: center
+        width: 30rem
+        text-align: left
+        margin: auto
+        padding-top: 1rem
+        +w992
+            width: 100%
+            text-align: center
+        &_text
+            font: 16px/24px 'RobotoMedium', sans-serif
+            text-transform: uppercase
+            color: #083c96
+
+        .title
+            padding-bottom: 2.6rem
+            margin-bottom: 2rem
+            text-align: left
+            color: $dark-gray
+            +w992
+                text-align: center
+
+            &:before
+                margin-left: 0
+                left: 0
+                transform: translateX(0)
+                background-color: $dark-gray
+                @include w992
+                    left: 50%
+                    margin-left: -45px
+
+        &_linkBtn
+            color: $white 
+            display: inline-block
+            position: relative
+            font: 1.6rem/4.5rem 'RobotoMedium', sans-serif
+            padding: 0 2rem 0 5rem
+            background-color: $main
+            margin-top: 5.5rem
+            transition: all ease-in-out .1s
+            border-radius: 3px
+            +w992
+                margin-top: 3rem
+            +w320
+                margin-top: 2rem
+            &:hover,
+            &:active
+                background-color: $main-hover
+            .site_icon
+                +size(20px)
+                position: absolute
+                top: 1.2rem
+                left: 1.5rem
+                fill: $white

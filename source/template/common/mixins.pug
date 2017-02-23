@@ -1,0 +1,45 @@
+//- вариант1:
+
+//- var icons = [{name:"vk", href: "http://vk.com", icon:"assets/img/sprite1/sprite.svg#vk"},{name: "Github", href: "http://github.com",icon:"assets/img/sprite1/sprite.svg#github"},{name: "LinkedIn", href: "http://linkedin.com", icon:"assets/img/sprite1/sprite.svg#linkedIn"}]
+
+//- mixin icons(className)
+//-   .icons
+//-     ul(class=`${className}_list`)
+//-       each item in icons
+//-         li(class=`${className}_item`)
+//-           a(class=`${className}_link` href=item.href, target="_blank")=item.name
+//-             svg(class=`${className}_icon`)
+//-               use(xlink:href=item.icon)
+
+
+mixin nav(className, nav)
+  nav(class=`${className}`)
+    ul(class=`${className}_list`)
+      each href,name in nav
+        li(class=`${className}_item`)
+          a(href=`${href}`, class=`${className}_link`+((name === current) ? ` ${className}_link--active` : ""))=name
+        
+//- вариант2:
+mixin socials
+  .socials
+    ul(class="socials_list")
+      +icon("socials","vk", "https://vk.com/ungers", "assets/img/sprite1/sprite.svg#vk")
+      +icon("socials","Github", "https://github.com/OlekUnger", "assets/img/sprite1/sprite.svg#github")
+      +icon("socials","LinkedIn","http://linkedin.com","assets/img/sprite1/sprite.svg#linkedIn")
+
+mixin icon(className,link,href,icon)
+  li(class=`${className}_item`)
+    a(class=`${className}_link`, href=`${href}`)=`${link}`
+      svg(class=`${className}_icon`)
+        use(xlink:href=`${icon}`)
+
+
+
+
+       
+  
+
+
+
+
+

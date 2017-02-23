@@ -1,0 +1,19 @@
+
+- var blockSkills=[{title:"Frontend", array:{"html":"HTML5","css":"CSS3","js":"JavaScript &JQuery","pug":"PUG"}},{title:"Backend",array:{"php":"PHP","sql":"mySQL","node":"Node.js &npm","mongo":"Mongo.db"}},{title:"Workflow",array:{"git":"Git","gulp":"Gulp","bower":"Bower"}}] 
+        
+.blockSkills
+  each item in blockSkills
+    .blockSkills_row
+      h4.blockSkills_title=item.title
+      ul.skillCounter
+        each skill,id in item.array
+          li.skillCounter_item
+            span=skill
+            svg(class="cCircle" id=`${id}`)
+              circle(r="45" cx="55" cy="55")
+              circle(r="45" cx="55" cy="55")   
+
+
+            
+
+

@@ -1,0 +1,162 @@
+.myWorks
+  position: relative
+  // height: 100vh
+  .content
+    padding-top: 188px
+    height: 100%
+    display: flex
+    flex-direction: column
+    +w768
+      padding-top: 168px
+    +w480
+      padding-top: 140px
+    &_header
+      position: absolute
+      top: 0
+      width: 100%
+      text-align: center
+      padding: 60px 0
+      background-color: rgba(13, 17, 32, .7)
+      +w768
+        padding: 50px 0
+      +w480
+        padding: 40px 0
+
+  .title
+    color: $white-d
+
+  .triangle
+    fill: rgba(13, 17, 32, .7)
+
+.talkAboutMe
+  position: relative
+  min-height: 650px
+  min-height: 100vh
+  padding-top: 10px 
+  display: flex
+  justify-content: space-between
+  overflow: hidden
+  flex-direction: column
+  
+  // background-position: center 100%
+  .title
+    color: $white-d
+    text-align: center
+    margin-bottom: 40px
+.feedbackForm
+  position: relative
+  min-width: 300px
+  max-width: 380px
+  min-height: 300px
+  margin: auto
+  border-radius: 5px
+  overflow: hidden
+  z-index: 1
+  // background-color: rgba(13, 17, 32, .7)
+  box-shadow: 0 0 2px 0 #000
+  &_content
+    padding: 20px 20px 0
+
+  .form
+    
+    &_item
+      padding-left: 0
+    &_title
+      margin-bottom: 2rem
+      margin-top: 1rem
+      z-index: 2
+    input,
+    textarea
+      background-color: rgba(255,255,255,.05)
+
+  .userBlock-nav_item
+    background-color: transparent
+    box-shadow: none
+    color: $white06
+    z-index: 2
+    &:hover
+      background-color: $main
+  .userBlock-nav_link
+    color: $white06
+    &:hover
+      color: $white-d
+
+.form_wrap
+    margin-bottom: 4rem
+    padding: 0px 10px
+
+.blur
+  +size(100%)
+  background: url("../img/bg/6.jpg") center no-repeat
+  background-size:  100%
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 0
+  filter: blur(3px)
+
+  &_bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    min-width: 1920px
+    img
+      display: block
+      max-width: 100%
+      height: 100%
+.comments
+  max-width: 80rem
+  margin: auto
+  display: flex
+  flex-wrap: wrap
+  padding: 0px 10px
+  justify-content: space-between
+  margin-bottom: 4rem
+  // margin-top: 2rem
+  @include w768
+    flex-direction: column
+    align-items: center
+    margin-bottom: 4rem
+
+  @include w480
+    margin-bottom: 3rem
+    
+  &_item
+    width: 45%
+    display: flex
+    flex-direction: column
+    align-items: center
+    position: relative
+    color: #fff
+    @include w768
+      width: 70%
+      margin-bottom: 7rem
+      margin-bottom: 5rem 
+    @include w480
+      width: 100%
+      @include w480
+        margin-bottom: 4rem
+    &:last-child
+      margin-bottom: 0
+    strong
+        margin-left: 1rem
+  &_text
+    margin: 0 0 2rem
+    font: 1.6rem/2.6rem 'RobotoRegular', sans-serif
+    font-style: italic
+        
+  &_user
+    @include size(77px)
+    border-radius: 50%
+    margin-bottom: 1.5rem
+    background-color: $gray
+    overflow: hidden
+    
+
+
+    
+
+
+    

@@ -1,0 +1,24 @@
+extends ../_template
+
+block variables
+	
+									
+block content
+	
+	
+	.container
+		section.mainPage
+			.header_top
+				button.authBtn(type="button") Авторизоваться
+
+		
+			include ../blocks/_userBlock
+
+			
+			.footer-bottom
+				p.footer-content_text
+					|  &copy; | Олег Унгер | Создано с любовью в Loftschool | 2016
+
+block scripts
+	script(src='assets/js/foundation.js' defer)
+	script(src='assets/js/app.js' defer)

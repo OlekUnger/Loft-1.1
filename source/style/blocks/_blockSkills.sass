@@ -1,0 +1,107 @@
+.blockSkills
+    max-width: 560px
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    margin-top: 2rem
+
+    &_row:not(:last-child)
+        margin-bottom: 3rem
+    +w992
+        align-items: center
+    +w768
+        margin-top: 15px
+
+    &_title
+        text-align: left
+        color: $dark-gray
+        +w992
+            text-align: center
+
+    .skillCounter
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        +w992
+            display: flex
+            align-items: center
+            justify-content: center
+        &_item
+            +size(110px)
+            position: relative
+            font: 1.2rem/1.5rem 'RobotoMedium', sans-serif
+            text-align: center
+            color: #243994 
+            margin: 3.5rem 2rem 0 0 
+            display: flex
+            align-items: center
+            justify-content: space-around
+            
+            &:last-child
+                @media (min-width: 992px)
+                    margin-right: 0
+            +w992
+                margin: 3rem 1.5rem 0 
+            span
+                display: block
+                width: 70px
+                margin: auto 
+        
+    .cCircle
+        +size(110px)
+        position: absolute
+        top: 0
+        left: 0
+        fill: none
+        stroke-width: 20
+        circle:nth-child(1)
+            stroke: #dfdcd5
+            fill: none
+        circle:nth-child(2)
+            stroke: $main
+            transform: rotate(-90deg)
+            transform-origin:  55px 55px
+            stroke-dasharray: 660
+            stroke-dashoffset: 450
+            transition: all 1s
+#html,
+#css
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 400
+#js
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 600
+#pug
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 500
+#php
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 660
+#sql
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 660
+#node
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 640
+#mongo
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 640
+#git
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 500
+#gulp
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 490
+#bower
+    circle:nth-child(2)
+        stroke-dasharray: 660
+        stroke-dashoffset: 450

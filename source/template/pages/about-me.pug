@@ -1,0 +1,75 @@
+extends ../_template
+
+block title 
+  title Обо мне
+block variables
+  
+
+block content
+  - var current="Обо мне"
+  - var title=current
+  include ../blocks/header
+    
+  section.aboutMe#content
+    .triangles
+      .blockSVG
+        svg.triangle.triangle--left(viewbox='0 0 300 160', preserveaspectratio='none')
+          polygon(points='0,160 0,0 300,160')
+      .blockSVG
+        svg.triangle.triangle--right(viewbox='0 0 300 160', preserveaspectratio='none')
+          polygon(points='0,160 300,0 300,160')
+
+    .aboutMe_item.aboutMe_item--left
+      .container
+        .content
+          h2.title=title
+          .content_img
+            img(src="assets/img/about.jpg")
+          .content_text
+            h3.title.title--marked Кто я
+            p
+              | Я веб разработчик из Санкт-Петербурга. Изучаю разработку сайтов
+              | и приложений с января 2016 года. Мне нравится делать интересные и современные проекты.
+            p
+              | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже
+              | я выложу в нем свой контент. А пока посмотрите, как тут все классно и красиво! 
+
+    .aboutMe_item.aboutMe_item--right
+      .container
+        .content
+          h3.title.title--marked
+            | Чем я могу быть
+            br
+            | вам полезен
+          .content_text
+            p
+              | Больше всего меня привлекает Frontend разработка, но я также знаком
+              | и мoгу решать не сложные задачи на Backend. Но давайте по порядку.
+
+          include ../blocks/_blockSkills
+
+  section.map_section
+    #map.map
+
+    .contacts
+      h3.title.title--marked Контакты
+      ul.contacts_list
+        +icon("contacts","ungers37", "#", "assets/img/sprite1/sprite.svg#skype")
+        +icon("contacts","+7 921 441 66 75", "tel:+7(921)4416675", "assets/img/sprite1/sprite.svg#phone2")
+        +icon("contacts","ounger@inbox.ru","mailto: ounger@inbox.ru","assets/img/sprite1/sprite.svg#envelope2")
+        +icon("contacts","Saint-Petersburg","#","assets/img/sprite1/sprite.svg#map_marker")
+ 
+    include ../blocks/footer
+
+    
+  include ../blocks/_fullScreenMenu
+    +nav("fullScreenMenu-nav", {"Мои работы":"my-works.html",
+                                "Обо мне":"about-me.html",
+                                "Блог":"blog.html",
+                                "Авторизация":"index.html"})
+block scripts
+  script(src='assets/js/foundation.js' defer)
+  script(src='assets/js/app.js' defer)
+  script(src='https://maps.googleapis.com/maps/api/js?key= AIzaSyCS7p0GilpiSBqPqGToot_860MvTgs6t88&callback=initMap' async defer)
+  
+    

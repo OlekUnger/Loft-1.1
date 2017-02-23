@@ -1,0 +1,119 @@
+.form
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &_title
+    color: $white-d
+    text-transform: uppercase
+
+  &_content
+    width: 100%
+    padding: 20px 0
+
+  &_item
+    position: relative
+    padding-left: 45px
+    margin-bottom: 20px
+    border-radius: 2px
+    overflow: hidden
+    &:last-child
+      margin-bottom: 0
+
+  input,
+  textarea
+    +size(100%)
+    resize: none
+    padding: 13px 18px
+    color: $gray
+    &:focus~
+      label
+        .form_icon
+          fill: $main
+  label
+    +size(45px 45px)
+    position: absolute
+    line-height: 50px
+    text-align: center
+    top: 0
+    left: 0
+    background-color: $biege
+      
+  &_icon
+    +size(18px 17px)
+    fill: $gray
+
+.antiBot
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-contant: space-between
+  .radioWrap
+    width: 100%
+    display: flex
+    justify-content: center       
+  .radioLabel
+    position: relative
+    margin-right: 40px
+    padding-left: 30px
+    &:last-child
+        margin-right: 0
+    &::before 
+      +pseudo
+      +size(20px)
+      border-radius: 50%
+      background-color: $white
+      border: 0
+      top: 0
+      left: 0
+  input[type="radio"]:checked +
+    .radioLabel
+      &::before
+        +size(.8rem)
+        border: 6px solid $white
+        background-color: $main
+  .checkIcon
+    +size(12px 9px)
+    fill: $white
+  .checkLabel
+    padding-left: 30px
+    position: relative
+    color: $white-d
+    margin-bottom: 10px
+    
+  .checkboxIndicator
+    +size(20px)
+    position: absolute
+    top: 0
+    left: 0
+    background: $white
+    border-radius: 3px
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .checkIcon
+      +size(12px 9px)
+      fill: #fff
+      display: none
+
+  input[type="checkbox"]
+    display: none
+
+  input[type="checkbox"]:checked+
+    .checkboxIndicator
+      background-color: $main
+      svg
+        display: block
+
+  fieldset
+    width: 100%
+    border: none
+    color: $white-d
+    text-align: center
+    padding: 0
+    legend
+      font-weight: 700
+      width: 100%
+      margin-bottom: 10px
+

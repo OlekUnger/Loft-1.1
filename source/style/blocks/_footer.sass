@@ -1,0 +1,116 @@
+.footer
+    width: 100%
+    position: relative
+    background-color: rgba(28, 31, 41, .85)
+    margin-top: 4rem
+    &-content
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        padding: 2.5rem
+        +w992
+            padding-top: 0
+            padding-bottom: 0
+        +w480
+            flex-direction: column
+            padding: 0 10px
+
+        &_Block
+            padding: 0 3rem 0 3rem
+            border-left: 1px solid rgba(255,255,255, 0.2)
+            width: 33%
+            text-align: left
+            &:nth-child(1)
+                border-left: none
+            +w992
+                border-left: none
+                padding: 1.5rem 0 1.5rem 0
+            +w480
+                width: 100%!important
+                text-align: center!important
+                border-bottom: 1px solid rgba(255,255,255, 0.2)      
+                &:nth-child(1)
+                    border-left: none
+                    padding-left: 0
+            +w1200
+                width: 30%
+            +w992
+                width: 100%
+                text-align: center
+                border-bottom: 1px solid rgba(255,255,255, 0.2)
+            &:nth-child(2)
+                +w1200
+                    width: 45%
+                +w992
+                    width: 70%
+                    border-bottom: none
+                    
+                +w480
+                    width: 100%
+                    border-bottom: 1px solid rgba(255,255,255, 0.2)         
+            &:nth-child(3)
+                padding-right: 0
+                +w1200
+                    width: 25%
+                +w992
+                    width: 30%
+                    text-align: right
+                    border-bottom: 0
+                +w480
+                    width: 100%
+        &_text
+            margin: 0
+            color: $white-d
+            font: 1.6rem/2.4rem 'RobotoLight',sans-serif
+
+    &-bottom
+        background-color: rgba(8, 60, 150, .85)
+        text-align: center
+        padding: 1rem 10px
+                 
+    &-nav
+        margin-bottom: 4rem
+        max-width: 46rem
+        @include w768
+            margin-bottom: 3rem
+        &_list
+            margin: 0 auto
+            list-style: none
+            padding: 0
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+        &_item
+            
+            flex-grow: 1
+            margin-right: .5rem
+            &:last-child
+                margin-right: 0
+        &_link
+            display: inline-block
+            position: relative
+            font: 1.6rem/2.4rem 'RobotoMedium', sans-serif
+            text-decoration: none
+            color: $white-d
+            &:hover
+                text-decoration: underline
+            &.active
+                text-decoration: underline
+
+.footer-socials
+    .socials
+        +w480
+        margin: 0 auto
+        &_list
+            justify-content: flex-start
+            +w992
+               justify-content: center 
+        
+        &_icon
+            fill: $white-d
+
+        &_link:hover
+            .socials_icon
+                fill: $main   
+    
+    

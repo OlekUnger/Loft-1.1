@@ -1,0 +1,91 @@
+extends ../_template
+block title 
+  title Мои работы
+
+block variables
+
+block content
+  - var current="Мои работы"
+  - var title=current
+  include ../blocks/header
+
+  section.myWorks#content
+
+    .triangles
+      .blockSVG
+        svg.triangle.triangle--left(viewbox='0 0 300 160', preserveaspectratio='none')
+          polygon(points='0,160 0,0 300,160')
+      .blockSVG
+        svg.triangle.triangle--right(viewbox='0 0 300 160', preserveaspectratio='none')
+          polygon(points='0,160 300,0 300,160')
+    
+    .content
+      header.content_header
+        h2.title=title
+      include ../blocks/_slider
+
+  section.talkAboutMe
+    .blur_bg
+      img(src="assets/img/bg/6.jpg")
+    
+    h2.title Что обо мне
+            br
+            | говорят
+
+    .comments
+     .comments_item
+        .comments_user
+           img(src='./assets/img/m-photo1.png', alt='')
+        blockquote.comments_text
+           | Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!
+           | 2 месяца только самых тяжелых испытаний и бессонных ночей!
+        cite
+           strong Ковальчук Дмитрий
+           br
+           | - основатель Loftschool
+     .comments_item
+        .comments_user
+           img(src='./assets/img/m-photo2.jpg', alt='')
+        blockquote.comments_text
+           | Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+        cite
+           strong Зар Захаров
+           br
+           | - преподаватель
+
+    .form_wrap
+      form.feedbackForm
+        .blur
+        .feedbackForm_content
+          .form
+            h3.form_title Связаться со мной
+            .form_content
+              .form_item
+                input(type="text" name="feedback" placeholder="Ваше имя" required)
+              .form_item
+                input(type="email" name="feedback" placeholder="Ваш email" required)
+              .form_item
+                textarea(type="text" name="feedback" placeholder="Ваше сообщение" cols="5" rows="5" required)
+                     
+        ul.userBlock-nav_list
+          li.userBlock-nav_item
+            button.userBlock-nav_link(type="submit") Отправить
+          li.userBlock-nav_item
+            button.userBlock-nav_link(type="reset") Очистить
+
+    a.arrow.arrow--up(href="#content")
+        svg.arrow_icon
+          use(xlink:href="assets/img/sprite1/sprite.svg#arrow_down")
+
+    include ../blocks/footer
+
+  include ../blocks/_fullScreenMenu
+    +nav("fullScreenMenu-nav", {"Мои работы":"my-works.html",
+                                "Обо мне":"about-me.html",
+                                "Блог":"blog.html",
+                                "Авторизация":"index.html"})  
+
+
+block scripts
+  script(src='assets/js/foundation.js' defer)
+  script(src='assets/js/app.js' defer)

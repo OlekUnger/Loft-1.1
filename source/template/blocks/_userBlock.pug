@@ -1,0 +1,48 @@
+
+.userBlock_wrap
+	.userBlock
+
+		.flipContainer
+			.flipper
+
+				.userBlock--front.front
+					.userBlock_content
+						include _user
+						.userBlock-socials
+							+socials
+			
+					.userBlock_footer
+					+nav('userBlock-nav',{"Мои работы":"my-works.html",
+																"Обо мне":"about-me.html",
+																"Блог":"blog.html"})
+
+				form.loginForm.userBlock--back.back
+					- var form_title = "Авторизуйтесь"
+					- var login = [{field:input,icon:"assets/img/sprite1/sprite.svg#login",placeholder:"Логин",type:"text"},{field:input,icon:"assets/img/sprite1/sprite.svg#password", placeholder:"Пароль", type:"password"}]						
+					.userBlock_content
+						include _form
+						.antiBot
+							label.checkLabel(for="checkbox") Я человек
+								input(type="checkbox" id="checkbox" name="agree")
+								span.checkboxIndicator
+									svg.checkIcon
+										use(xlink:href="assets/img/sprite1/sprite.svg#check")
+							fieldset
+								legend Вы точно не робот?
+								.radioWrap
+									input(id="radio-1" type="radio" name="capcha" value="Да" checked)
+									label.radioLabel(for="radio-1") Да
+							                        
+									input(id="radio-2" type="radio" name="capcha" value="Нет" data-rule="required")
+									label.radioLabel(for="radio-2") Не уверен
+					.userBlock_footer
+						.userBlock-nav
+							ul.userBlock-nav_list
+								li.userBlock-nav_item
+									a.userBlock-nav_link.flipBack(href="#") Назад
+								li.userBlock-nav_item
+									button.userBlock-nav_link(type="submit") Войти
+					
+		
+
+		

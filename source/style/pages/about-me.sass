@@ -1,0 +1,65 @@
+
+.aboutMe
+  position: relative
+  background-color: $main-cont
+  display: flex
+  min-height: 650px
+  +w992
+    flex-direction: column
+
+  &_item
+    
+    +size(50% 100%)
+    +w992
+      width: 100%
+    &--right
+      background-color: $main-cont-l
+      .content
+        max-width: 560px
+
+    &--left
+      background-color: $main-cont
+      .content
+        max-width: 480px
+        
+  .title
+    display: block
+    color: $dark-gray
+    text-transform: uppercase
+    text-align: center
+    padding-bottom: 10px
+    margin-bottom: 3rem
+    &:before
+      background-color: $dark-gray
+  
+  .content
+    height: 100%
+    min-width: 300px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 1rem 0 3rem
+    +w992
+      max-width: 480px
+
+    &_img
+      +size(100% 390px)
+      overflow: hidden
+      margin-bottom: 3rem
+      text-align: center
+      img
+        +size(120% auto)
+        
+    &_text
+      width: 100%
+      text-align: left
+      text-align: justify
+      
+  .triangle 
+    &--left
+      fill: $main-cont
+    &--right
+      fill: $main-cont-l
+      +w992
+        fill: $main-cont

@@ -1,0 +1,11 @@
+
+.form
+  h3.form_title #{form_title}
+  .form_content
+    each item  in login
+      .form_item
+        input(type=item.type name="login" placeholder=item.placeholder)
+        label
+          svg.form_icon
+            use(xlink:href=item.icon)
+      

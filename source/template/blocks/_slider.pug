@@ -1,5 +1,5 @@
 
-mixin slider_item(title,text,href,img_src,img_title,icon_link)
+mixin slider_item(title,description,text,href,img_src,img_title,icon_link, target)
    .slider_item
       .slider_item--left
          .slider_img
@@ -8,17 +8,15 @@ mixin slider_item(title,text,href,img_src,img_title,icon_link)
          .site
             h3.title.title--marked=`${title}`
             p.site_text=text
-            a.site_linkBtn(href=href)
+            p.description=description
+            a.site_linkBtn(href=href target="_blank")
                | Посмотреть сайт
                svg.site_icon
                   use(xlink:href=icon_link)
 
 .slider
    .slider_controls
-      //- a.dot(href="#")
-      //- a.dot(href="#")
-      //- a.dot(href="#")
-      //- a.dot(href="#")
+      
 
    .slider_nav
       span.sliderBtn.prev(href="#")
@@ -28,10 +26,8 @@ mixin slider_item(title,text,href,img_src,img_title,icon_link)
          svg.nav_icon.nav_icon--right
             use(xlink:href='./assets/img/sprite1/sprite.svg#arrow_down')
    .slider_wrap
-      +slider_item("Сайт номер один","HTML, CSS, Javascript","assets/templates/nerds/index.html","assets/img/temp/nerds-index.jpg","сайт номер 1","assets/img/sprite1/sprite.svg#link")
-      +slider_item("Сайт номер два","HTML, CSS, Javascript","assets/templates/technomart/index.html","assets/img/temp/technomart-index.jpg","сайт номер 2","assets/img/sprite1/sprite.svg#link")
-      +slider_item("Сайт номер три","HTML, CSS, Javascript","assets/templates/Glacy/index.html","assets/img/temp/Gllacy.jpg","сайт номер 3","assets/img/sprite1/sprite.svg#link")
-      +slider_item("Сайт номер четыре","HTML, SASS, Javascript","assets/templates/games/index.html","assets/img/temp/egames.jpg","сайт номер 4","assets/img/sprite1/sprite.svg#link")
-      +slider_item("Сайт номер пять","HTML, SASS, Bootstrap","assets/templates/antares/index.html","assets/img/temp/antares.jpg","сайт номер 66","assets/img/sprite1/sprite.svg#link")
-              
-      
+      +slider_item("Nerds","Учебный сайт HTML Academy","HTML, CSS, Javascript","assets/templates/nerds/index.html","assets/img/temp/nerds.png","сайт номер 1","assets/img/sprite1/sprite.svg#link")
+      +slider_item("Technomart","Учебный сайт HTML Academy","HTML, CSS, Javascript","assets/templates/technomart/index.html","assets/img/temp/technomart.png","сайт номер 2","assets/img/sprite1/sprite.svg#link")
+      +slider_item("Gllacy", "Учебный сайт HTML Academy","HTML, CSS, Javascript","assets/templates/Glacy/index.html","assets/img/temp/Gllacy.jpg","сайт номер 3","assets/img/sprite1/sprite.svg#link")
+      +slider_item("E-games","Клон страницы","HTML, SASS, Javascript","assets/templates/games/index.html","assets/img/temp/egames.jpg","сайт номер 4","assets/img/sprite1/sprite.svg#link")
+      +slider_item("Antares","","HTML, SASS, Bootstrap","assets/templates/antares/index.html","assets/img/temp/antares.png","сайт номер 6","assets/img/sprite1/sprite.svg#link")
